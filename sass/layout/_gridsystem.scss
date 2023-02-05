@@ -1,0 +1,48 @@
+.grid-2-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8rem;
+
+	@include respond(tab-port) {
+		margin: auto;
+		max-width: 75%;
+		grid-template-columns: 1fr;
+	}
+	@include respond(phone) {
+		margin: auto;
+		max-width: 100%;
+		grid-template-columns: 1fr;
+	}
+}
+
+.grid-col-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	gap: 8rem;
+	width: 95rem;
+	margin: 0 auto;
+
+	@include respond(tab-port) {
+		margin: auto;
+		max-width: 35%;
+		grid-template-columns: 1fr;
+	}
+	@include respond(phone) {
+		margin: auto;
+		max-width: 50%;
+		grid-template-columns: 1fr;
+	}
+}
+
+.grid-col-4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 4rem;
+
+	@include respond(tab-port) {
+		margin: auto;
+		max-width: 50%;
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,114 @@
+.btn {
+	&,
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1rem 3rem;
+		display: inline-block;
+		border-radius: 10rem;
+		transition: all 1s;
+		position: relative;
+		font-size: $default-font-size;
+
+		//Change for the <button> element
+		border: none;
+		cursor: pointer;
+	}
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+		&::after {
+			transform: scaleX(1.3) scaleY(1.5);
+			opacity: 0;
+		}
+	}
+	&:active &:focus {
+		outline: none;
+		transform: translate(-3px);
+		box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+	}
+	&--white {
+		background-color: $color-white;
+		color: $color-grey-dark;
+		&::after {
+			content: '';
+			background-color: $color-white;
+		}
+	}
+	&--green {
+		background-color: $color-primary;
+		color: $color-white;
+		&::after {
+			content: '';
+			background-color: $color-primary;
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		border-radius: 10rem;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		transition: all 0.3s;
+	}
+
+	&--animated {
+		animation: btnMoveUp 0.8s ease-in-out 0.75s;
+		animation-fill-mode: backwards;
+	}
+}
+
+.btn-text {
+	transition: all 0.5s;
+	&:link,
+	&:visited {
+		font-size: $default-font-size;
+		color: $color-primary;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 1px solid $color-primary;
+		padding: 3px;
+	}
+
+	&:hover {
+		background-color: $color-primary;
+		color: $color-white;
+		box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+		transform: translateY(2px);
+	}
+}
+
+// .button-text {
+// 	font-size: $default-font-size;
+// 	color: $color-primary;
+// 	display: inline-block;
+// 	text-decoration: none;
+// 	border: none;
+// 	background-color: transparent;
+// 	border-bottom: 1px solid $color-primary;
+// 	padding: 3px;
+// 	transition: all 0.5s;
+// 	cursor: pointer;
+
+// 	&:hover {
+// 		background-color: $color-primary;
+// 		color: $color-white;
+// 		box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+// 		transform: translateY(-2px);
+// 	}
+
+// 	&:active {
+// 		box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+// 		transform: translateY(2px);
+// 	}
+// }
